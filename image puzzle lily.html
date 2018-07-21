@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Image Puzzle</title>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <h1>Each picture gives you one letter that corresponds to the number.<br>
+    Fill in the blanks with each letter for an inspirational quote!</h1>
+    <p><b>Requires pencil and paper.</b></p>
+    <p>The quote looks like this (some corresponding numbers have been provided for assistance):<br>
+      <img src="https://dl.dropboxusercontent.com/s/4iex5phgeea4s9r/blanks.jpg?dl=0"></p>
+
+<!--text field for user to submit their answer + submit button-->
+  <p><b>Enter your answer here with no punctuation:</b> <input id="quote" style="width:300px">
+<button type="submit" onclick="checkAnswer()">Submit</button></p>
+
+<!--tells user if they're correct or not-->
+<p id="message"></p>
+
+<!--checks the answer submitted-->
+<script>
+function checkAnswer() {
+    var ans, text, correctAnswer;
+    correctAnswer = "LIFE IS MADE IN THE MISTAKES";
+
+    // Get the answer of the input field with id="quote"
+    ans = document.getElementById("quote").value;
+
+    // If the user entered the correct quote
+    if (ans.toUpperCase() == correctAnswer) {
+        text = "Congrats! You're correct! :)";
+        parent.postMessage("gameOver:2:85","*");
+    } else {
+        text = "Incorrect. Please try again :(";
+    }
+    document.getElementById("message").innerHTML = text;
+}
+</script>
+
+<!--hint button-->
+<button type="hint" onclick="revealHint()">Hints</button>
+
+<!--the hints will appear here-->
+<p id="message1"></p>
+<p id="message2"></p>
+<p id="message3"></p>
+
+<!--Hint function-->
+<script>
+var count, hint1, hint2, hint3;
+count = 0;
+hint1 = "1. You need to know the number of objects in each picture and the name of the object.";
+hint2 = "2. Still stuck? If the word is BIRD and there are 3 birds in the picture, the letter is R.";
+hint3 = "3. When you fill in the blanks, cross out the letters you've already used and re-check the letters you got from the pictures!";
+function revealHint() {
+  count++;
+  switch (count) {
+    case 1:
+      document.getElementById("message1").innerHTML = hint1;
+      break;
+
+    case 2:
+      document.getElementById("message2").innerHTML = hint2;
+      break;
+
+    case 3:
+      document.getElementById("message3").innerHTML = hint3;
+  }
+}
+</script>
+
+    <!--Container for all the images and their corresponding numbers-->
+    <table style="width:100%; font-size:150%">
+  <tr>
+    <td style="vertical-align: bottom">1. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/ijan232s42sk0is/milk.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">2. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/h4u9fubbbvl0zz3/2%20fish.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">3. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/3y6jtfx0vc3k55n/cherries.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">4. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/h4u9fubbbvl0zz3/2%20fish.jpg?dl=0"></td>
+  </tr>
+  <tr>
+    <td style="vertical-align: bottom">5. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/hxkuv77ckho31m6/balls.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">6. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/uc2hqqrmxof9fdw/pens.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">7. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/rezvuaavm8qgsu9/pencils.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">8. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/s0wn0lf0xb4gv6w/fish.jpg?dl=0"></td>
+  </tr>
+  <tr>
+    <td style="vertical-align: bottom">9. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/gvq3zfb288agu2y/pots.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">10. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/3y6jtfx0vc3k55n/cherries.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">11. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/ijan232s42sk0is/milk.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">12. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/h4u9fubbbvl0zz3/2%20fish.jpg?dl=0"></td>
+  </tr>
+  <tr>
+    <td style="vertical-align: bottom">13. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/h4u9fubbbvl0zz3/2%20fish.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">14. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/49qcw6k9h14j1x6/straws.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">15. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/jw9yko30pof4oaj/sword.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">16. <input style="width:30px">
+      <img src="https://dl.dropboxusercontent.com/s/gvq3zfb288agu2y/pots.jpg?dl=0"></td>
+  </tr>
+  <tr>
+    <td style="vertical-align: bottom">17. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/49qcw6k9h14j1x6/straws.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">18. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/iku9eszftlyalfa/socks.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">19. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/jw9yko30pof4oaj/sword.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">20. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/3y6jtfx0vc3k55n/cherries.jpg?dl=0"></td>
+  </tr>
+  <tr>
+    <td style="vertical-align: bottom">21. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/jw9yko30pof4oaj/sword.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">22. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/wdtijllbelit5po/chairs.jpg?dl=0"></td>
+    <td style="vertical-align: bottom">23. <input style="width:30px">
+    <img src="https://dl.dropboxusercontent.com/s/b6ne03k5e0idvmf/beads.jpg?dl=0"></td>
+  </tr>
+</table>
+    <div id="images">
+      <p style="font-size:150%;">
+        <br>
+        <br><br>
+        <br>
+
+        <br><br>
+      <br><br>
+
+      </p>
+  </div>
+  </body>
+</html>
